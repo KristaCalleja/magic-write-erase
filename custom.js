@@ -22,15 +22,37 @@ context.lineTo(x,y);
 context.stroke();
 
 // Use object destructuring to take properties and rename them into propert variables so they are shorter
+// Use options object as key variable in top-level.
 function draw({key}){
     context.beginPath();
     context.moveTo(x,y);
 
-    if (key === 'ArrowDown'){
+    switch (key){
+        case 'ArrowUp' : 
         y = y - 10;
-    } else if (key === 'ArrowDown'){
+        break;
+
+        case 'ArrowDown' : 
+        y = y + 10;
+        break;
+
+        case 'ArrowRight' : 
+        x = x + 10;
+        break;
+
+        case 'ArrowLeft' : 
         x = x - 10;
-    };
+        break;
+        // switch statement needs default
+        default: 
+        break;
+    }
+
+    // if (key == 'ArrowUp'){
+    //     y = y - 10;
+    // } else if (key == 'ArrowDown'){
+    //     x = x - 10;
+    // };
     context.lineTo(x,y);
     context.stroke();
 }
@@ -41,7 +63,8 @@ function handleKey(e){
         e.preventDefault();
         console.log('Handling key');
         console.log(e.key);
-        draw({key: e.keys});
+        // Use Objects from the options in Line 26.
+        draw({key: e.key});
     }
 }
 
