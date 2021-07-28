@@ -23,7 +23,18 @@ button{
     background: #f0f1c4;
     padding: 1em 1.5em;
     font-weight: 500;
-    border: 4px black solid;
+    border-radius: 11px;
+    border: 4px black dotted;
+    cursor: pointer;
+}
+button:focus-visible{
+    background: #bd4a72;
+    color: #f0f1c4;
+}
+button:hover{ 
+    background: #c5c5ac;
+    color: black;
+    border: 4px gray dotted;
 }
 .modal{
     color: #bd4a72;
