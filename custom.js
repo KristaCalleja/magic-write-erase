@@ -1,3 +1,7 @@
+window.onload = function(){
+    window.alert('Use arrow keys to draw. Press Shake button to restart!')
+}
+
 const canvas = document.getElementById('etch-a-sketch');
 const context = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
