@@ -16,13 +16,13 @@ canvas {
     background: white;
 }
 canvas.shake {
-    animation: shake 0.5s linear 1;
+    animation: shake 0.5s linear 2;
 }
 button{
     background: #f0f1c4;
     padding: 1em 1.5em;
-    outline: none;
-    border: 1px #f0f1c4 solid;
+    font-weight: 500;
+    border: 4px black solid;
 }
 @keyframes shake {
     10%, 90% {

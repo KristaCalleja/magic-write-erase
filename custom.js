@@ -68,4 +68,19 @@ function handleKey(e){
     }
 }
 
-window.addEventListener('keydown', handleKey)
+function clearCanvas(){
+    canvas.classList.add('shake');
+    canvas.addEventListener('animationend', function(){
+        navigator.vibrate(100);
+        console.log('Done the shake');
+        canvas.classList.remove('shake');
+    },
+    // Another argument for addeventlistener
+    {  once: true } 
+    );
+    
+    context.clearRect(0,0, width, height);
+}
+
+window.addEventListener('keydown', handleKey);
+shakeButton.addEventListener('click', clearCanvas);
